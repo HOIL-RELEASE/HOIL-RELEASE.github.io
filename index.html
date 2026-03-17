@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Shoe Style-Invariant and Ground-Aware Learning for Dense Foot Contact Estimation.">
-  <meta name="keywords" content="Human Pose, Human Mesh, Virtual Human, 3D Reconstruction">
+        content="Learning Human-Object Interaction for 3D Human Pose Estimation from LiDAR Point Clouds.">
+  <meta name="keywords" content="Human Pose, Human Mesh, Virtual Human, 3D Reconstruction, LiDAR, Autonomous Vehicle, Autonomous Driving">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shoe Style-Invariant and Ground-Aware Learning for Dense Foot Contact Estimation</title>
+  <title>Learning Human-Object Interaction for 3D Human Pose Estimation from LiDAR Point Clouds</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -48,10 +48,13 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Shoe Style-Invariant and Ground-Aware Learning for Dense Foot Contact Estimation</h1>
+          <h1 class="title is-1 publication-title">Learning Human-Object Interaction for 3D Human Pose Estimation from LiDAR Point Clouds</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://dqj5182.github.io/">Daniel Sungho Jung</a>,
+            </span>
+            <span class="author-block">
+              <a>Dohee Cho</a>,
             </span>
             <span class="author-block">
               <a href="https://cv.snu.ac.kr/index.php/~kmlee/">Kyoung Mu Lee</a>
@@ -63,42 +66,7 @@
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block">CVPR 2026</span>
-          </div>
-
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="https://arxiv.org/pdf/2511.22184"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2511.22184"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://github.com/dqj5182/FECO_RELEASE"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                  </a>
-              </span>
-            </div>
-
+            <span class="author-block">ArXiv 2026</span>
           </div>
         </div>
       </div>
@@ -116,7 +84,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Foot contact plays a critical role in human interaction with the world, and thus exploring foot contact can advance our understanding of human movement and physical interaction. Despite its importance, existing methods often approximate foot contact using a zero-velocity constraint and focus on joint-level contact, failing to capture the detailed interaction between the foot and the world. Dense estimation of foot contact is crucial for accurately modeling this interaction, yet predicting dense foot contact from a single RGB image remains largely underexplored. There are two main challenges for learning dense foot contact estimation. First, shoes exhibit highly diverse appearances, making it difficult for models to generalize across different styles. Second, ground often has a monotonous appearance, making it difficult to extract informative features. To tackle these issues, we present a FEet COntact estimation (FECO) framework that learns dense foot contact with shoe style-invariant and ground-aware learning. To overcome the challenge of shoe appearance diversity, our approach incorporates shoe style adversarial training that enforces shoe style-invariant features for contact estimation. To effectively utilize ground information, we introduce a ground feature extractor that captures ground properties based on spatial context. As a result, our proposed method achieves robust foot contact estimation regardless of shoe appearance and effectively leverages ground information. Code will be released.
+            Understanding humans from LiDAR point clouds is one of the most critical tasks in autonomous driving due to its close relationships with pedestrian safety, yet it remains challenging in the presence of diverse human-object interactions and cluttered backgrounds. Nevertheless, existing methods largely overlook the potential of leveraging human-object interactions to build robust 3D human pose estimation frameworks. There are two major challenges that motivate the incorporation of human-object interaction. First, human-object interactions introduce spatial ambiguity between human and object points, which often leads to erroneous 3D human keypoint predictions in interaction regions. Second, there exists severe class imbalance in the number of points between interacting and non-interacting body parts, with the interaction-frequent regions such as hand and foot being sparsely observed in LiDAR data. To address these challenges, we propose a Human-Object Interaction Learning (HOIL) framework for robust 3D human pose estimation from LiDAR point clouds. To mitigate the spatial ambiguity issue, we present human-object interaction-aware contrastive learning (HOICL) that effectively enhances feature discrimination between human and object points, particularly in interaction regions. To alleviate the class imbalance issue, we introduce contact-aware part-guided pooling (CPPool) that adaptively reallocates representational capacity by compressing overrepresented points while preserving informative points from interacting body parts. In addition, we present an optional contact-based temporal refinement that refines erroneous per-frame keypoint estimates using contact cues over time. As a result, our HOIL effectively leverages human-object interaction to resolve spatial ambiguity and class imbalance in interaction regions. Codes will be released.
           </p>
         </div>
       </div>
