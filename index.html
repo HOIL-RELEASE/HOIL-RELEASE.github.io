@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Shoe Style-Invariant and Ground-Aware Learning for Dense Foot Contact Estimation.">
+  <meta name="keywords" content="Human Pose, Human Mesh, Virtual Human, 3D Reconstruction">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shoe Style-Invariant and Ground-Aware Learning for Dense Foot Contact Estimation</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon_snu.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Shoe Style-Invariant and Ground-Aware Learning for Dense Foot Contact Estimation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://dqj5182.github.io/">Daniel Sungho Jung</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://cv.snu.ac.kr/index.php/~kmlee/">Kyoung Mu Lee</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Seoul National University,</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">CVPR 2026</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2511.22184"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2511.22184"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/dqj5182/FECO_RELEASE"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Foot contact plays a critical role in human interaction with the world, and thus exploring foot contact can advance our understanding of human movement and physical interaction. Despite its importance, existing methods often approximate foot contact using a zero-velocity constraint and focus on joint-level contact, failing to capture the detailed interaction between the foot and the world. Dense estimation of foot contact is crucial for accurately modeling this interaction, yet predicting dense foot contact from a single RGB image remains largely underexplored. There are two main challenges for learning dense foot contact estimation. First, shoes exhibit highly diverse appearances, making it difficult for models to generalize across different styles. Second, ground often has a monotonous appearance, making it difficult to extract informative features. To tackle these issues, we present a FEet COntact estimation (FECO) framework that learns dense foot contact with shoe style-invariant and ground-aware learning. To overcome the challenge of shoe appearance diversity, our approach incorporates shoe style adversarial training that enforces shoe style-invariant features for contact estimation. To effectively utilize ground information, we introduce a ground feature extractor that captures ground properties based on spatial context. As a result, our proposed method achieves robust foot contact estimation regardless of shoe appearance and effectively leverages ground information. Code will be released.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  </div>
+</section>
+
+
+  
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Dataset configuration -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Dataset Configuration</h2>
+        <div class="content has-text-justified">
+          <p>
+            We leverage 10 datasets with various foot interaction, including our proposed COFE dataset that provides in-the-wild joint-level foot contact annotations.
+          </p>
+        </div>
+        <img src="./static/images/feco_dataset_configuration.png" style="width:60%;">
+      </div>
+    </div>
+    <!--/ Dataset configuration -->
+
+    <!-- Model Architecture -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Model Architecture</h2>
+        <div class="content has-text-justified">
+          <p>
+            Our method first applies low-level style randomization on input image and encodes it into image feature using a ViT backbone. From image feature, shoe style and shoe content randomization are performed with random shoe images from the UT Zappos50K dataset to produce a shoe style-invariant feature. This feature is then processed by a ground feature encoder to extract ground feature, which is used to predict pixel height map and ground normal. Finally, the ground feature and shoe style-invariant feature are fused to form a contact feature, which is decoded to produce the final foot contact prediction.
+          </p>
+        </div>
+        <img src="./static/images/feco_overall_pipeline.png" height="250%">
+      </div>
+    </div>
+    <!--/ Model Architecture -->
+
+
+
+    <!-- Results: Contact -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Qualitative Results</h2>
+        <img src="./static/images/feco_qualitative1.png" height="250%">
+      </div>
+    </div>
+    <!--/ Results: Contact -->
+
+
+    <!-- Results: Contact -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Qualitative Results</h2>
+        <img src="./static/images/feco_qualitative2.png" height="250%">
+      </div>
+    </div>
+    <!--/ Results: Contact -->
+    
+  
+    <!-- Concurrent Work. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Links</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            There's a lot of excellent works that we wish to share.
+          </p>
+          <p>
+            <a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Nam_Reducing_Domain_Gap_by_Reducing_Style_Bias_CVPR_2021_paper.pdf">Reducing domain gap by reducing style bias.</a>
+          </p>
+          <p>
+            <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Choi_Progressive_Random_Convolutions_for_Single_Domain_Generalization_CVPR_2023_paper.pdf">Progressive random convolutions for single domain generalization.</a>
+          </p>
+          <p>
+            <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Tripathi_DECO_Dense_Estimation_of_3D_Human-Scene_Contact_In_The_Wild_ICCV_2023_paper.pdf">DECO: Dense Estimation of 3D Human-Scene Contact In The Wild.
+          </p>
+          <p>
+            <a href="https://openreview.net/pdf/675470edc47b66903daee2c8f60bd0f3fa8065f0.pdf">Learning Dense Hand Contact Estimation from Imbalanced Data.</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Concurrent Work. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre>
+<code>
+  @inproceedings{jung2026feco,
+    title={Shoe Style-Invariant and Ground-Aware Learning for Dense Foot Contact Estimation},
+    author={Jung, Daniel Sungho and Lee, Kyoung Mu},
+    booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+    year={2026}
+    }
+</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            The code for this webpage is largely borrowed from the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
