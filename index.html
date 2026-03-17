@@ -120,10 +120,10 @@
         <h2 class="title is-3">Model Architecture</h2>
         <div class="content has-text-justified">
           <p>
-            Our method first applies low-level style randomization on input image and encodes it into image feature using a ViT backbone. From image feature, shoe style and shoe content randomization are performed with random shoe images from the UT Zappos50K dataset to produce a shoe style-invariant feature. This feature is then processed by a ground feature encoder to extract ground feature, which is used to predict pixel height map and ground normal. Finally, the ground feature and shoe style-invariant feature are fused to form a contact feature, which is decoded to produce the final foot contact prediction.
+            Given an input point cloud, we first embed it into input features and encode them using a multi-stage encoder with CPPool. The encoded features are then progressively decoded through a multi-stage decoder to produce the final decoder features. At each decoding stage, keypoint queries are iteratively updated via multi-stage keypoint decoder with decoder features. Lastly, HOIL predicts point-level segmentation and contact from the final decoder feature, and 3D keypoint coordinates and keypoint-level contact from keypoint queries.
           </p>
         </div>
-        <img src="./static/images/feco_overall_pipeline.png" height="250%">
+        <img src="./static/images/hoil_overall_pipeline.png" height="250%">
       </div>
     </div>
     <!--/ Model Architecture -->
